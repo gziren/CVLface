@@ -12,7 +12,7 @@ CVLFace is a powerful and versatile toolkit for achieving state-of-the-art perfo
 
 **CVLFace is created by [MSU CVLab](https://cvlab.cse.msu.edu/) to foster innovation, collaboration, and accessibility in the field of face recognition. It is built upon a foundation of cutting-edge research and technology, offering a user-friendly experience for both beginners and seasoned practitioners.**
 
-[Image: Collage of faces with different identities]
+**Visit our Documentation for more details: [Documentation Website](https://mk-minchul.github.io/CVLface)** 
 
 ## 💪 Features
 
