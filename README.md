@@ -8,7 +8,7 @@ CVLFace is a powerful and versatile toolkit for achieving state-of-the-art perfo
 * **Blazing Fast Multi-GPU Training:**  Train industry-leading face recognition models with lightning speed, leveraging the power of multiple GPUs for unparalleled efficiency.
 * **Pre-trained Models at Your Fingertips:** Access a collection of pre-trained models (from Hugging Face Hub) ready to be integrated into your projects, saving you time and effort.
 * **Comprehensive Evaluation Capabilities:**  Thoroughly evaluate your models on a wide range of benchmark datasets, including LFW, CPFLW, CFPFP, CALFW, AGEDB, IJBB, IJBC, and TinyFace, all with the speed of multi-GPU processing.
-
+* **Using face recognition models as loss functions for other tasks:**  Utilize face recognition models as auxiliary loss functions for other tasks, such as training ID consistent face generation models (e.g. [DCFace](https://arxiv.org/pdf/2304.07060))
 
 **CVLFace is created by [MSU CVLab](https://cvlab.cse.msu.edu/) to foster innovation, collaboration, and accessibility in the field of face recognition. It is built upon a foundation of cutting-edge research and technology, offering a user-friendly experience for both beginners and seasoned practitioners.**
 
