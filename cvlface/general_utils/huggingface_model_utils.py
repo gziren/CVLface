@@ -9,6 +9,7 @@ import sys
 
 # helpfer function to download huggingface repo and use model
 def download(repo_id, path, HF_TOKEN=None):
+    os.makedirs(path, exist_ok=True)
     files_path = os.path.join(path, 'files.txt')
     if not os.path.exists(files_path):
         hf_hub_download(repo_id, 'files.txt', token=HF_TOKEN, local_dir=path, local_dir_use_symlinks=False)
