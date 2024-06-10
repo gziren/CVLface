@@ -201,10 +201,5 @@ We would like to express our gratitude for their contributions and support:
 * [MSU PRIP Lab](https://biometrics.cse.msu.edu/)
 * [MSU iProbe Lab](https://iprobe.cse.msu.edu/)
 
-## 🔗  Links
-
-* [GitHub Repository](https://github.com/your-username/cvlface)
-* [Documentation](https://your-project-documentation-link)
-* [Papers](https://link-to-your-papers)
 
 **Join us in pushing the boundaries of face recognition technology with CVLFace!**
