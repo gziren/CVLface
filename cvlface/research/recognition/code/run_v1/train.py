@@ -131,6 +131,8 @@ if __name__ == '__main__':
             classifier = classifier.to(fabric.device)  # no ddp as it divides fc into multiple GPUs
     if aligner.has_trainable_params():
         aligner = fabric.setup(aligner)
+    elif aligner is not None:
+        aligner = aligner.to(fabric.device)
 
 
     verify_ddp_weights_equal(model)
