@@ -21,6 +21,7 @@ from torchvision.transforms import Compose, ToTensor, Normalize
 from PIL import Image
 import pandas as pd
 import torch
+import inspect
 
 
 def pil_to_input(pil_image, device='cuda'):
@@ -33,7 +34,8 @@ def pil_to_input(pil_image, device='cuda'):
 if __name__ == '__main__':
 
     parser = argparse.ArgumentParser(description='')
-    parser.add_argument('--recognition_model_id', type=str, default='minchul/cvlface_adaface_ir101_webface12m')
+    # parser.add_argument('--recognition_model_id', type=str, default='minchul/cvlface_adaface_ir101_webface12m')
+    parser.add_argument('--recognition_model_id', type=str, default='minchul/cvlface_adaface_vit_base_kprpe_webface4m')
     parser.add_argument('--aligner_id', type=str, default='minchul/cvlface_DFA_mobilenet')
     parser.add_argument('--data_root', type=str, default='./example')
     parser.add_argument('--threshold', type=float, default=0.3)
@@ -63,8 +65,13 @@ if __name__ == '__main__':
         aligned_x2, orig_pred_ldmks2, aligned_ldmks2, score2, thetas2, normalized_bbox2 = aligner(input2)
 
         # recognize
-        feat1 = fr_model(aligned_x1)
-        feat2 = fr_model(aligned_x2)
+        input_signature = inspect.signature(fr_model.model.net.forward)
+        if input_signature.parameters.get('keypoints') is not None:
+            feat1 = fr_model(aligned_x1, aligned_ldmks1)
+            feat2 = fr_model(aligned_x2, aligned_ldmks2)
+        else:
+            feat1 = fr_model(aligned_x1)
+            feat2 = fr_model(aligned_x2)
 
         # compute cosine similarity
         cossim = torch.nn.functional.cosine_similarity(feat1, feat2).item()
